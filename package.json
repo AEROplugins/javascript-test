@@ -1,0 +1,19 @@
+{
+  "name": "cleancode-javascriptgame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "denters",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "http": "^0.0.1-security",
+    "nodemon": "^2.0.15",
+    "socket.io": "^4.4.1",
+    "vector": "^0.0.4"
+  }
+}

@@ -1,0 +1,232 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(53, 231, 113, 0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(12, 209, 134, 0.438); 
+}
+
+body {
+    font-family: monospace;
+    background: #bdc3c7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #bdc3c7, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#flex-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#canvas, #chat {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    margin: 10px;
+}
+
+#canvas {
+    background-color: aliceblue;
+    width: 500px;
+    height: 500px;
+}
+
+#chat {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #333;
+    width: 500px;
+    height: 500px;
+}
+
+#chat::before {
+    font-size: 12px;
+    font-weight: 900;
+    padding: 4px;
+    display: block;
+    content: "🔴🟡🟢 ~ Console";
+    background-color: darkgray;
+}
+
+h2 {
+    margin: 10px;
+    visibility: hidden;
+    position: absolute;
+    padding: 4px;
+    text-align: center;
+    font-size: 28px;
+    color: #ff1361;
+    background-color: rgba(0, 0, 0, 0.212);
+}
+
+#chat p.inputs {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#chat p.inputs input {
+    font-family: monospace;
+    color: greenyellow;
+    text-align: center;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.253);
+    width: 50%;
+    padding: 5px;
+}
+
+#chat p.inputs input::placeholder {
+    font-size: 20px;
+    font-family: monospace;
+    color: greenyellow;
+}
+
+#chat p.inputs button {
+    transition: 300ms all ease-in-out;
+    color: greenyellow;
+    padding: 8px;
+    border: 3px solid greenyellow;
+    background-color: black;
+}
+
+#chat p.inputs button:hover {
+    color: rgb(115, 228, 158);
+    padding: 10px;
+    border: 3px solid rgb(115, 228, 158);
+    background-color: black;
+}
+
+#chat-log {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: black;
+    width: 100%;
+    height: 80%;
+}
+
+#chat-log #username {
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    color: greenyellow;
+}
+
+#chat-log p:hover::after{
+    font-size: 19px;
+    content: "👈";
+}
+
+#chat-log p.ghost::before {
+    font-size: 24px;
+    color: aquamarine;
+    content: ' 👻 ';
+}
+
+#chat-log #username::placeholder {
+    color: chartreuse;
+}
+
+.chat-sucess {
+    color: aqua;
+    font-size: 20px;
+}
+
+.chat-sucess::before, .chat-erro::before {
+    color: darkorange;
+    content: 'SERVIDOR:';
+}
+
+.chat-erro {
+    color: red;
+    font-size: 20px;
+}
+
+.chat-msg {
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+.chat-notify {
+    color: goldenrod;
+    font-family: monospace;
+    font-size: 19px;
+}
+
+.chat-msg::before {
+    color: rgb(67, 55, 236);
+    content: 'CHAT ';
+    font-size: 18px;
+}
+
+#header-text {
+    text-align: center;
+    padding: 10px;
+    color: whitesmoke;
+    font-size: 30px;
+    background-color: #333;
+}
+
+#token-header {
+    color: aqua;
+    font-weight: 900;
+}
+
+@media all and (max-width:970px) {
+    #flex-container {
+        flex-direction: column;
+    }
+
+    #header-text {
+        font-size: 28px;
+    }
+}
+
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E o Pijas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <div id="main-container">
+        <p id="header-text">Token:<span id="token-header" class=""></span></p>
+        <div id="flex-container">
+            <div id="chat">
+                <div id="chat-log">
+                    <p class="ghost"><input id="username" type="text" placeholder="$ coloque seu nome aqui" pattern="[a-zA-Z0-9]+"></p>
+                </div>
+                <p class="inputs">
+                    <input pattern="[a-zA-Z0-9]+" id="console-input"type="text" required placeholder="$ digite aqui">
+                    <button class="" id="console-input-sender" type="submit">Enviar</button>
+                </p>
+            </div>
+            <div>
+                <canvas id="canvas" width="500" height="500">
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js">
+    </script>
+</body>
+
+</html>
